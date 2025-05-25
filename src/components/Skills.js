@@ -57,7 +57,7 @@ const Skills = () => {
             {name:"Agile Methodology",level:70},
             {name:" Scrum,",level:75},
             {name:"Team Collaboration",level:85},
-            {name:"Documentation ",level:80},             , 
+            {name:"Documentation ",level:80},
         ]
     },
     {
