@@ -5,6 +5,8 @@ const Section = ({ id, title, children, className = '' }) => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    const currentRef = sectionRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -18,13 +20,13 @@ const Section = ({ id, title, children, className = '' }) => {
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -43,4 +45,4 @@ const Section = ({ id, title, children, className = '' }) => {
   );
 };
 
-export default Section; 
+export default Section;
